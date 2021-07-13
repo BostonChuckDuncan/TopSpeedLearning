@@ -1,0 +1,344 @@
+<mat-toolbar
+  style="background-color: #0a5746; display: flex; flex-direction: row"
+>
+  <span>
+    <a style="color: white" routerLink="/splashPage">TopSpeedLearning</a>
+  </span>
+
+  <div
+    class="btn-group"
+    style="margin-left: 20px"
+    *ngIf="this.cache.StorageGetBool('Visitor')"
+  >
+    <button
+      [matMenuTriggerFor]="OverviewMenu"
+      class="MenuItems navBarStyle"
+      mat-raised-button
+    >
+      Overview
+    </button>
+    <mat-menu #OverviewMenu="matMenu">
+      <button class="navBarStyle" mat-menu-item routerLink="/whatistopspeed">
+        What is Top Speed Learning
+      </button>
+      <button class="navBarStyle" mat-menu-item routerLink="/topspeedhelps">
+        How Top Speed Helps
+      </button>
+      <button class="navBarStyle" mat-menu-item routerLink="/usertypes">
+        Types of Users
+      </button>
+    </mat-menu>
+  </div>
+
+  <div
+    class="btn-group"
+    style="margin-left: 20px"
+    *ngIf="this.cache.StorageGetBool('Visitor')"
+  >
+    <button
+      [matMenuTriggerFor]="GuidesMenu"
+      class="MenuItems navbarStyle"
+      style="background-color: #850f1a; color: white"
+      mat-raised-button
+    >
+      Guides
+    </button>
+    <mat-menu #GuidesMenu="matMenu">
+      <button class="navBarStyle" mat-menu-item routerLink="/tutorials">
+        Tutorial
+      </button>
+      <button class="navBarStyle" mat-menu-item routerLink="/tutorials">
+        Examples
+      </button>
+    </mat-menu>
+  </div>
+
+  <div
+    class="btn-group"
+    style="margin-left: 20px"
+    *ngIf="this.cache.StorageGetBool('Visitor')"
+  >
+    <button
+      [matMenuTriggerFor]="ContactsMenu"
+      class="MenuItems navBarStyle"
+      mat-raised-button
+    >
+      Contacts
+    </button>
+    <mat-menu #ContactsMenu="matMenu">
+      <button class="navBarStyle" mat-menu-item routerLink="/aboutUs">
+        About Us
+      </button>
+      <button class="navBarStyle" mat-menu-item routerLink="/contactUs">
+        Contact Us
+      </button>
+      <button class="navBarStyle" mat-menu-item routerLink="/support">
+        Support
+      </button>
+    </mat-menu>
+  </div>
+
+  <div
+    class="btn-group"
+    style="margin-left: 20px"
+    *ngIf="this.cache.StorageGetBool('Visitor')"
+  >
+    <button
+      [matMenuTriggerFor]="SignupMenu"
+      class="MenuItems navBarStyle"
+      mat-raised-button
+    >
+      SignUp
+    </button>
+    <mat-menu #SignupMenu="matMenu">
+      <button class="navBarStyle" mat-menu-item routerLink="#">
+        See your System Administrator
+      </button>
+      <button class="navBarStyle" mat-menu-item routerLink="/contactUs">
+        OR Click Here to contact us
+      </button>
+    </mat-menu>
+  </div>
+
+  <!------>
+
+  <div
+    class="btn-group ml-3"
+    style="margin-left: 20px"
+    *ngIf="this.cache.StorageGetBool('Admin')"
+  >
+    <button
+      [matMenuTriggerFor]="AdminMenu"
+      class="MenuItems navBarStyle"
+      mat-raised-button
+    >
+      Administration
+    </button>
+    <mat-menu #AdminMenu="matMenu">
+      <button class="navBarStyle" mat-menu-item routerLink="/adminUserManage">
+        User Management
+      </button>
+      <button
+        class="navBarStyle"
+        mat-menu-item
+        routerLink="/projectConfiguration"
+      >
+        Project Configuration
+      </button>
+      <button class="navBarStyle" mat-menu-item routerLink="/projectLearning">
+        Automatic Learning
+      </button>
+    </mat-menu>
+  </div>
+
+  <div
+    class="btn-group ml-3"
+    style="margin-left: 20px"
+    *ngIf="
+      this.cache.StorageGetBool('User') || this.cache.StorageGetBool('Admin')
+    "
+  >
+    <button
+      [matMenuTriggerFor]="ProjDesign"
+      class="MenuItems navBarStyle"
+      mat-raised-button
+    >
+      Project Design
+    </button>
+    <mat-menu #ProjDesign="matMenu">
+      <button class="navBarStyle" mat-menu-item routerLink="/adminUserManage">
+        New Project
+      </button>
+      <button class="navBarStyle" mat-menu-item routerLink="/adminUserManage">
+        Edit Existing
+      </button>
+      <button
+        class="navBarStyle"
+        mat-menu-item
+        routerLink="/projectConfiguration"
+      >
+        Share Project
+      </button>
+      <button class="navBarStyle" mat-menu-item routerLink="/projectLearning">
+        Save Copy
+      </button>
+      <button class="navBarStyle" mat-menu-item routerLink="/adminUserManage">
+        Delete Project
+      </button>
+    </mat-menu>
+  </div>
+
+  <div
+    class="btn-group ml-3"
+    style="margin-left: 20px"
+    *ngIf="
+      this.cache.StorageGetBool('User') || this.cache.StorageGetBool('Admin')
+    "
+  >
+    <button
+      [matMenuTriggerFor]="ExecProj"
+      class="MenuItems navBarStyle"
+      mat-raised-button
+    >
+      Execute Project
+    </button>
+    <mat-menu #ExecProj="matMenu">
+      <button class="navBarStyle" mat-menu-item routerLink="/adminUserManage">
+        Start Solving
+      </button>
+      <button
+        class="navBarStyle"
+        mat-menu-item
+        routerLink="/projectConfiguration"
+      >
+        Pause/Continue
+      </button>
+      <button class="navBarStyle" mat-menu-item routerLink="/adminUserManage">
+        Snapshot/Restore
+      </button>
+      <button class="navBarStyle" mat-menu-item routerLink="/projectLearning">
+        View Progress
+      </button>
+      <button class="navBarStyle" mat-menu-item routerLink="/adminUserManage">
+        Halt
+      </button>
+    </mat-menu>
+  </div>
+
+  <div
+    class="btn-group ml-3"
+    style="margin-left: 20px"
+    *ngIf="
+      this.cache.StorageGetBool('User') || this.cache.StorageGetBool('Admin')
+    "
+  >
+    <button
+      [matMenuTriggerFor]="StateMach"
+      class="MenuItems navBarStyle"
+      mat-raised-button
+    >
+      State Machine
+    </button>
+    <mat-menu #StateMach="matMenu">
+      <button class="navBarStyle" mat-menu-item routerLink="/adminUserManage">
+        New
+      </button>
+      <button
+        class="navBarStyle"
+        mat-menu-item
+        routerLink="/projectConfiguration"
+      >
+        Edit Existing
+      </button>
+      <button class="navBarStyle" mat-menu-item routerLink="/adminUserManage">
+        Delete Selected
+      </button>
+    </mat-menu>
+  </div>
+
+  <div class="mr-auto d-inline-flex">
+    <div
+      class="align-self-center mr-auto"
+      *ngIf="messageText.length > 0"
+      [ngStyle]="{
+        'z-index': '4',
+        'background-color': 'green',
+        color: 'white',
+        height: '30px',
+        border: '2px solid red'
+      }"
+    >
+      <p class="pb-2 pl-2 pr-2">{{ messageText }}</p>
+    </div>
+  </div>
+
+  <span class="example-spacer"></span>
+  <div
+    style="
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: flex-start;
+    "
+  >
+    <div class="ml-auto" *ngIf="this.cache.StorageGetBool('Visitor')">
+      <form
+        class="form-inline ml-sm-3 my-2 my-lg-0"
+        [formGroup]="loginForm"
+        (ngSubmit)="login()"
+        [autocomplete]="'off'"
+      >
+        <input
+          id="username"
+          class="form-control mr-sm-2"
+          [ngStyle]="{ 'margin-right': '15px', width: '120px', height: '30px' }"
+          type="text"
+          formControlName="username"
+          placeholder="Username"
+          required
+        />
+        <input
+          id="password"
+          class="form-control mr-sm-2"
+          [ngStyle]="{ width: '120px', height: '30px' }"
+          type="password"
+          formControlName="password"
+          placeholder="Password"
+          required
+        />
+
+        <button
+          Type="submit"
+          style="margin-left: 20px"
+          class="MenuItems navBarStyle"
+          mat-raised-button
+        >
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="ml-auto" *ngIf="!this.cache.StorageGetBool('Visitor')">
+    <div
+      style="
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: flex-start;
+      "
+    >
+      <div style="color: white; width: auto; margin-top: 6px">
+        Welcome {{ welcomeName | titlecase }}
+        <button
+          type="button"
+          (click)="logout()"
+          style="
+            margin-left: 10px;
+            height: 34px;
+            width: 70px;
+            background-color: #850f1a;
+            color: white;
+            border-radius: 5px;
+          "
+        >
+          Logout
+        </button>
+
+        <button
+          type="button"
+          (click)="showHelp()"
+          style="
+            background-color: #850f1a;
+            color: white;
+            margin-left: 20px;
+            height: 34px;
+            width: 70px;
+            margin-right: 20px;
+            border-radius: 5px;
+          "
+        >
+          Help
+        </button>
+      </div>
+    </div>
+  </div>
+</mat-toolbar>
