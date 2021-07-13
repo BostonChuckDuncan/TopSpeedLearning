@@ -16,23 +16,23 @@ export class CacheService {
   cacheUser(
     userName: string,
     token: string,
-    rolesList: string,
-    knownAs: string
+    // rolesList: string,
+    // knownAs: string
   ) {
     localStorage.setItem('userName', userName);
     var decodedToken = JSON.parse(atob(token.split('.')[1]));
     localStorage.setItem('token', decodedToken);
-    localStorage.setItem('roles', rolesList);
+    // localStorage.setItem('roles', rolesList);
     localStorage.setItem('loggedIn', 'true');
-    localStorage.setItem('knownAs', knownAs);
+    // localStorage.setItem('knownAs', knownAs);
   }
 
   removeUser() {
     localStorage.removeItem('userName');
     localStorage.removeItem('token');
     localStorage.setItem('loggedIn', 'false');
-    localStorage.removeItem('roles');
-    localStorage.removeItem('knownAs');
+    // localStorage.removeItem('roles');
+    // localStorage.removeItem('knownAs');
   }
 
   setBaseUrl(url: string) {

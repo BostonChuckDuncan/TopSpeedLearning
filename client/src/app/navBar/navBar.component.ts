@@ -13,14 +13,14 @@ import { Router } from '@angular/router';
 export class NavBarComponent implements OnInit {
   messageText = '';
   welcomeName = '';
+  loginForm : any;
+  loginStatus : any;
 
   constructor(
     public account: AccountService, private fb: FormBuilder,
               public http: HttpClient, public cache: CacheService,
               public router: Router
   ) { }
-  loginForm : any;
-  loginStatus : any;
 
   ngOnInit() {
     this.loginForm = this.fb.group({
