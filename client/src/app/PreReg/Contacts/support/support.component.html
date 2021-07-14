@@ -1,0 +1,83 @@
+<div class="workspace">
+  <div class="flexColumn">
+    <!-- left column -->
+    <div  style="height: 12vh"></div>
+    <div style="margin-left: 4%">
+      <div class="flexRow">
+        <div class="card card-titles">
+          <div style="margin: 5px 15px; z-index: 1;">
+            <h1 style="color: #E67E22; padding-top: 10px;">Technical Support</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="flexRow" style="height: 2vh"></div>
+
+      <div class="flexRow">
+        <div class="card card-content">
+          <div class="explainText">
+            <p>For <b>General or Sales information</b>, please go to Contacts -> Contact Us.</p>
+            <p>For <b>Technical Support</b> fill in the information below for either email or a scheduled chat session.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <div class="flexRow" style="justify-content: flex-end">
+        <form formGroup="support" (ngSubmit)="submitSupport()">
+          <div style="height: 3vh"></div>
+          <div style="margin-right: 12vw; width: 30vw; color: white; display: flex; flex-direction: column; justify-content: flex-start; flex-grow: 1;">
+            <table>
+              <tr>
+                <td>
+                  <label for="login">Login ID:</label> 
+                      <span style="color:red" 
+                            *ngIf="f.login.touched && (f.login.hasError('required') || f.emloginail.hasError('minlength'))">
+                        <strong> Id required</strong> (or use contact Us)</span>
+                </td>
+                <td>
+                  <input type="text" class="form-control" formControlName="login">
+                </td>
+              <tr>
+                <td>
+                    <label for="email" style="padding-top: 5px;">Email:</label>
+                    <span style="color:yellow;" 
+                      *ngIf="f.email.touched && (f.email.hasError('required') || f.email.hasError('minlength'))">
+                      <strong> Email is required</strong></span>
+                </td>
+                <td>
+                    <input type="text" class="form-control" formControlName="email">
+                </td>
+              </tr>
+              <tr>
+                <td>
+
+                </td>
+                <td>
+                  
+                </td>
+              </tr>
+            </table>
+            <div>
+              <label for="phone" style="padding-top: 5px;">Phone:</label>
+              <span style="color:yellow" 
+                 *ngIf="f.phone.touched && this.support.controls.phone.value != null && f.phone.hasError('pattern') ">
+                <strong> Email is required</strong></span>
+              <input type="text" class="form-control" formControlName="phone">
+            </div>
+            <div style="width: 350px;">
+              <label style="margin-top: 5px;" for="message">Message:</label>
+              <span style="color:yellow" *ngIf="f.message.touched && (f.message.hasError('required') || f.message.hasError('minlength'))">
+                <strong> Message is required</strong></span>
+              <textarea rows="10" style="width: 350px;" formControlName="message"></textarea>
+            </div>
+            <div>
+              <button [disabled]="!this.support.valid" class="btn btn-success" type="submit" >Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+

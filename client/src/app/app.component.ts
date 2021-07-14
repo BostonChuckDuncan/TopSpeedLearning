@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CacheService } from './_services/cache.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent implements OnInit {
   constructor(private http: HttpClient, private cache: CacheService) { }
 
   ngOnInit(): void {
-    this.cache.setBaseUrl("https://localhost:5001/api/");
+    this.cache.setBaseUrl(environment.apiUrl);
     this.cache.setUserLoginStatus('Visitor');
 //    this.getUsers();
   }

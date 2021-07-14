@@ -35,11 +35,11 @@ export class NavBarComponent implements OnInit {
 
     this.account.accountLoginSuccess.subscribe(successStatus => {
       this.loginStatus = successStatus;
-      // if (this.loginStatus) {
-      //   this.router.navigateByUrl('/splashPagePost');
-      // } else {
-      //   this.router.navigateByUrl('/splashPage');
-      // }
+      if (this.loginStatus) {
+        this.router.navigateByUrl('/splashPagePost');
+      } else {
+        this.router.navigateByUrl('/splashPage');
+      }
     })
   }
 
