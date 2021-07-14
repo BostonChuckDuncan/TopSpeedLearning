@@ -4,10 +4,10 @@
 
     <div style="margin-left: 45px;">
 
-      <form formGroup="contactUsForm" (submit)="submitContactUs()" [autocomplete]="'off'">
+      <form [formGroup]="contactUsForm" (submit)="submitContactUs()" [autocomplete]="'off'">
         <div class="flexRow" style="height: 5vh"></div>
         <div class="col-md-3 flex-column" style="height: 60vh">
-          <table ngStyle="{'border': none}">
+          <table [ngStyle]="{'border': 'none'}">
             <tr>
               <td>Your Email</td>
               <td><input type="text" class="form-control" formControlName="email"></td>
@@ -15,7 +15,7 @@
             <tr>
               <td></td>
               <td>
-                <div *ngIf="f.email.hasError('required')">
+                <div *ngIf="f.email.hasError('required') && f.email.touched == true">
                   Email address is required.
                 </div>
                 <div *ngIf="f.email.hasError('pattern')">
@@ -50,7 +50,7 @@
             <tr>
               <td></td>
               <td style="margin-top: 25px;">
-                  <button [disabled]="!this.contactUsForm.valid" class="btn btn-success" type="submit">Submit</button>
+                  <button [disabled]="this.contactUsForm.hasError" class="btn btn-success" type="submit">Submit</button>
               </td>
             </tr>
           </table>

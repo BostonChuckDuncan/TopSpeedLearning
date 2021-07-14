@@ -25,7 +25,7 @@
     </div>
 
       <div class="flexRow" style="justify-content: flex-end">
-        <form formGroup="support" (ngSubmit)="submitSupport()">
+        <form [formGroup]="support" (ngSubmit)="submitSupport()">
           <div style="height: 3vh"></div>
           <div style="margin-right: 12vw; width: 30vw; color: white; display: flex; flex-direction: column; justify-content: flex-start; flex-grow: 1;">
             <table>

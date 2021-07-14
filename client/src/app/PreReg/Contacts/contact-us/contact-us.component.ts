@@ -13,15 +13,15 @@ export class ContactUsComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.isSubmitted = false;
-  }
-
-  ngOnInit() {
     this.contactUsForm = this.fb.group({
        email: ['', [Validators.required,
           Validators.pattern('^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$')]],
        phone: ['', Validators.pattern('^([1-9]{1}-)?[0-9]{3}-[0-9]{3}-[0-9]{4}$')],
        message: ['', [Validators.required, Validators.minLength(10)]]
    });
+  }
+
+  ngOnInit() {
 
   }
 

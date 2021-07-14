@@ -8,10 +8,10 @@ body, html {
 .workspace {
   background: url("/assets/Images/Child2flip.png") no-repeat center center fixed;
   background-size: cover;
-  background-position: 0px 64px;
+  background-position: 0px 57px;
   
   position: fixed;
-  height: 92vh;
+  height: 93vh;
   width: 100%;
   overflow-x: hidden;
 }

@@ -7,7 +7,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
   styleUrls: ['./support.component.scss']
 })
 export class SupportComponent implements OnInit {
-  support;
+  support : any;
 
   constructor(private fb: FormBuilder) { }
 
