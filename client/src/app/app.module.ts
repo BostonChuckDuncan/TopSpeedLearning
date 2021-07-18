@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { NavBarModule } from './navBar/navBar.module';
 import { ToastrModule } from 'ngx-toastr';
 import { MaterialModule } from './material/material.module';
-import { PreRegModule } from './PreReg/prereg.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -28,7 +27,6 @@ import { ReactiveFormsModule } from '@angular/forms';
       positionClass: 'toast-bottom-right',
     }),
     MaterialModule,
-    PreRegModule
   ],
   providers: [],
   bootstrap: [AppComponent]
