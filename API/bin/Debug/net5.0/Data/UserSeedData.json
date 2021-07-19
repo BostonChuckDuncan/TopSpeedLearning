@@ -2,25 +2,13 @@
     {
         "UserName": "Chuck",
         "CanTrial": false,
-        "Created": "2021-01-01",
-        "TrialBegan": false,
+        "Created": "2019-01-06",
+        "TrialBegan": "2019-01-06",
         "CCTypeUser": false,
         "FirstName": "chuck",
         "LastName": "duncan",
         "Phone1": "978-555-1212",
         "KnownAs": "chuck",
         "EmailAddress": "cduncan@solutionhunter.com"
-    },
-    {
-        "UserName": "pat",
-        "CanTrial": false,
-        "Created": "2021-01-01",
-        "TrialBegan": false,
-        "CCTypeUser": false,
-        "FirstName": "patricia",
-        "LastName": "duncan",
-        "Phone1": "978-555-1212",
-        "KnownAs": "patch",
-        "EmailAddress": "patch@solutionhunter.com"
     }
 ]

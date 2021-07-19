@@ -37,7 +37,7 @@
             </tr>
             <tr>
               <td>Message</td>
-              <td><textarea rows="6" cols="50" formControlName="message"></textarea></td>
+              <td><textarea rows="6" cols="50" style="border-radius: 5px;" formControlName="message"></textarea></td>
             </tr>
             <tr>
               <td></td>
@@ -48,9 +48,10 @@
               </td>
             </tr>
             <tr>
-              <td></td>
+              <td>Errors: {{hasErrors}}</td>
               <td style="margin-top: 25px;">
-                  <button [disabled]="this.contactUsForm.hasError" class="btn btn-success" type="submit">Submit</button>
+                  <button [disabled]="hasErrors"
+                      type="submit">Submit</button>
               </td>
             </tr>
           </table>

@@ -1,5 +1,5 @@
 import { environment } from './../../../../environments/environment';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 @Component({
@@ -7,9 +7,10 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.css']
 })
-export class ContactUsComponent implements OnInit {
+export class ContactUsComponent implements OnInit, OnChanges {
   contactUsForm: FormGroup;
   isSubmitted: boolean;
+  hasErrors: boolean = false;
 
   constructor(private fb: FormBuilder) {
     this.isSubmitted = false;
@@ -20,17 +21,23 @@ export class ContactUsComponent implements OnInit {
        message: ['', [Validators.required, Validators.minLength(10)]]
    });
   }
+  ngOnChanges(changes: SimpleChanges): void {
+      this.hasErrors = this.contactUsForm.errors == null ? false : true;
+  }
 
   ngOnInit() {
 
   }
 
+ 
+ 
   get f() { return this.contactUsForm.controls; }
 
   submitContactUs() {
     this.isSubmitted = true;
     let url = environment.apiUrl;
     url = url + 'Contacts/SendNewMessage';
+
 
     // const msg = new UserSendMsg();
     // msg.email = this.f.email.value;

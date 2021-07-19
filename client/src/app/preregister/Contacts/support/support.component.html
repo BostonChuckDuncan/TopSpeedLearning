@@ -37,7 +37,7 @@
                         <strong> Id required</strong> (or use contact Us)</span>
                 </td>
                 <td>
-                  <input type="text" class="form-control" formControlName="login">
+                  <input type="text" class="form-control" style="margin-bottom: 10px;" formControlName="login">
                 </td>
               <tr>
                 <td>
@@ -48,14 +48,6 @@
                 </td>
                 <td>
                     <input type="text" class="form-control" formControlName="email">
-                </td>
-              </tr>
-              <tr>
-                <td>
-
-                </td>
-                <td>
-                  
                 </td>
               </tr>
             </table>
@@ -70,7 +62,7 @@
               <label style="margin-top: 5px;" for="message">Message:</label>
               <span style="color:yellow" *ngIf="f.message.touched && (f.message.hasError('required') || f.message.hasError('minlength'))">
                 <strong> Message is required</strong></span>
-              <textarea rows="10" style="width: 350px;" formControlName="message"></textarea>
+              <textarea rows="10" style="width: 425px; border-radius: 6px;" formControlName="message"></textarea>
             </div>
             <div>
               <button [disabled]="!this.support.valid" class="btn btn-success" type="submit" >Submit</button>

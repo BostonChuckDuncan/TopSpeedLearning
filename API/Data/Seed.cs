@@ -3,9 +3,8 @@ using System.Threading.Tasks;
 using API.Entities;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography;
-using System.Text;
 using Microsoft.AspNetCore.Identity;
+using System;
 
 namespace API.Data
 {
@@ -34,19 +33,14 @@ namespace API.Data
             {
                 await roleManager.CreateAsync(role);
             }
+
             foreach (var user in users)
             {
                 user.UserName = user.UserName.ToLower();
                 await userManager.CreateAsync(user, "Pa$$w0rd");
-                await userManager.AddToRoleAsync(user, "Admin");
+                await userManager.AddToRolesAsync(user, new[] { "Admin", "Author", "Member" });
             }
 
-            var admin = new AppUser
-            {
-                UserName = "admin"
-            };
-            await userManager.CreateAsync(admin, "Pa$$w0rd");
-            await userManager.AddToRolesAsync(admin, 
-                new[] { "Admin", "Author", "Member" });        }
+        }
     }
 }
